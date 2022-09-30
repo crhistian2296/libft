@@ -1,0 +1,10 @@
+*.o
+*.a
+*.out
+*.swp
+*.swo
+/.vscode
+.DS_Store
+/libftTester
+/libft-war-machine
+.idea
