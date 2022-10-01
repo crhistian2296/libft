@@ -6,7 +6,7 @@
 /*   By: crgarcia <crgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:50:29 by crgarcia          #+#    #+#             */
-/*   Updated: 2022/09/30 22:39:54 by crgarcia         ###   ########.fr       */
+/*   Updated: 2022/10/01 03:50:43 by crgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_strnstr(const char *long_str, const char *short_str, size_t len)
 {
 	size_t	pos;
 	size_t	i;
-	if((!long_str  || !short_str) && len == 0)
+
+	if ((!long_str || !short_str) && len == 0)
 		return (NULL);
 	if (!*short_str)
 		return ((char *)long_str);

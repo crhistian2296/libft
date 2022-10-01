@@ -6,7 +6,7 @@
 /*   By: crgarcia <crgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:06:38 by crgarcia          #+#    #+#             */
-/*   Updated: 2022/09/30 23:51:44 by crgarcia         ###   ########.fr       */
+/*   Updated: 2022/10/01 03:49:59 by crgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	src_len;
 	size_t	dest_len;
 
-	if((!dest  || !src) && size == 0)
+	if ((!dest || !src) && size == 0)
 		return (0);
 	i = 0;
 	src_len = ft_strlen(src);

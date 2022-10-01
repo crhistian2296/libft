@@ -6,50 +6,42 @@
 /*   By: crgarcia <crgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 11:59:54 by crgarcia          #+#    #+#             */
-/*   Updated: 2022/09/29 17:10:54 by crgarcia         ###   ########.fr       */
+/*   Updated: 2022/10/01 03:49:17 by crgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	valid_str(const char *str, size_t i, long long int fvalue, int sign)
+static int	is_space(char c)
 {	
-	if ((str[i] == '-' || str[i] == '+') && (str[i + 1] == '-'
-			|| str[i + 1] == '+'))
-		return (0);
-	if (str[i] == '-' || str[i] == '+' || (str[i] >= '0' && str[i] <= '9'))
-	{
-		if (str[i] == '+')
-			i++;
-		if (str[i] == '-')
-		{
-			sign *= -1;
-			i++;
-		}
-		while (str[i] >= '0' && str[i] <= '9')
-		{
-			fvalue = (10 * fvalue) + (str[i] - '0');
-			i++;
-		}
-		fvalue *= sign;
-		return (fvalue);
-	}
-	else
-		return (0);
+	return (c == ' ' || (c >= 9 && c <= 13));
 }
 
 int	ft_atoi(const char *str)
 {
-	size_t			i;
-	long long int	fvalue;
-	int				sign;
+	size_t	i;
+	size_t	fvalue;
+	int		sign;
 
 	i = 0;
 	fvalue = 0;
 	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (is_space(str[i]))
 		i++;
-	return (valid_str(str, i, fvalue, sign));
+	if (str[i] == '-')
+		sign *= -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		fvalue = (fvalue * 10) + (str[i] - '0');
+		if (fvalue > LONG_MAX && sign == -1)
+			return (0);
+		if (fvalue > LONG_MAX && sign == 1)
+			return (-1);
+		i++;
+	}
+	return (fvalue * sign);
 }
 
 /*

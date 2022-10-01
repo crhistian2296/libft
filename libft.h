@@ -6,7 +6,7 @@
 /*   By: crgarcia <crgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:52:02 by crgarcia          #+#    #+#             */
-/*   Updated: 2022/09/29 13:42:06 by crgarcia         ###   ########.fr       */
+/*   Updated: 2022/10/01 02:37:44 by crgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <ctype.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 //	NODO
 typedef struct s_list

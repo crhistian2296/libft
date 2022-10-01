@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crgarcia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: crgarcia <crgarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:20:58 by crgarcia          #+#    #+#             */
-/*   Updated: 2022/09/29 17:07:47 by crgarcia         ###   ########.fr       */
+/*   Updated: 2022/10/01 03:22:08 by crgarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	get_len(long int n)
 {
-	int	len;
+	size_t	len;
 
 	len = 1;
 	if (n < 0)
